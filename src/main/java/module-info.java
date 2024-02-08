@@ -1,9 +1,9 @@
-module org.ceica.taskapp {
+module com.ceica.taskapp {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
 
 
-    opens com.ceica.taskapp to javafx.fxml;
+    opens com.ceica.viewcontroller to javafx.fxml;
     exports com.ceica.taskapp;
 }
