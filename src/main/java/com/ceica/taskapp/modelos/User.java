@@ -1,4 +1,4 @@
-package com.ceica.modelos;
+package com.ceica.taskapp.modelos;
 
 import java.util.ArrayList;
 import java.util.List;

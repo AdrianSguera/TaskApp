@@ -1,23 +1,28 @@
-package com.ceica.viewcontroller;
+package com.ceica.taskapp.viewcontroller;
 
-import com.ceica.controller.AppController;
-import com.ceica.modelos.Rol;
-import com.ceica.modelos.Task;
-import com.ceica.modelos.User;
+import com.ceica.taskapp.TaskApp;
+import com.ceica.taskapp.modelos.Rol;
+import com.ceica.taskapp.modelos.Task;
+import com.ceica.taskapp.modelos.User;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 
-public class AdminController {
+public class AdminController extends ViewController {
     @FXML
     private TextField txtPassword, txtUsername;
 
@@ -26,6 +31,9 @@ public class AdminController {
 
     @FXML
     private ComboBox<Rol> comboBoxRol;
+
+    @FXML
+    private Menu userLogged;
 
     @FXML
     private TableView<User> tableViewUsers;
@@ -57,7 +65,6 @@ public class AdminController {
 
     @FXML
     public void initialize() {
-        AppController appController = new AppController();
         clmId.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getId()));
         clmUsername.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUsername()));
         clmRol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRol().getDescription()));
@@ -70,12 +77,10 @@ public class AdminController {
         clmCreationTime.setCellValueFactory(cellData ->
                 new SimpleObjectProperty<>(cellData.getValue().getCreation_time()));
         clmUser.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUser().getUsername()));
-        comboBoxRol.getItems().addAll(FXCollections.observableList(appController.getRoles()));
-        refreshAndSortTable(tableViewUsers);
-        refreshAndSortTable(tableViewTasks);
         comboBoxRol.setConverter(new StringConverter<Rol>() {
             @Override
             public String toString(Rol rol) {
+
                 return rol.getDescription();
             }
 
@@ -108,7 +113,6 @@ public class AdminController {
 
     @FXML
     public void addToTable() {
-        AppController appController = new AppController();
         appController.newUser(txtUsername.getText(), txtPassword.getText(), comboBoxRol.getSelectionModel().getSelectedItem().getId());
         txtUsername.clear();
         txtPassword.clear();
@@ -118,7 +122,6 @@ public class AdminController {
 
     @FXML
     public void saveToTable() {
-        AppController appController = new AppController();
         User selectedUser = tableViewUsers.getSelectionModel().getSelectedItem();
         appController.changeUsernameUser(selectedUser.getId(), txtUsername.getText());
         appController.changePasswordUser(selectedUser.getUsername(), txtPassword.getText());
@@ -144,7 +147,6 @@ public class AdminController {
 
     @FXML
     public void onDelete() {
-        AppController appController = new AppController();
         User selectedUser = tableViewUsers.getSelectionModel().getSelectedItem();
         appController.deleteUserById(selectedUser.getId());
         refreshAndSortTable(tableViewUsers);
@@ -153,7 +155,6 @@ public class AdminController {
 
     @FXML
     public void refreshAndSortTable(TableView<?> tableView) {
-        AppController appController = new AppController();
         if (tableView == tableViewTasks) {
             taskList = FXCollections.observableList(appController.getTasks());
             taskList.sort(Comparator.comparing(Task::getId));
@@ -163,5 +164,28 @@ public class AdminController {
             userList.sort(Comparator.comparing(User::getId));
             tableViewUsers.setItems(userList);
         }
+    }
+
+    public void closeSession(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(TaskApp.class.getResource("login-view.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene scene = new Scene(root, 600, 400);
+            Stage currentStage = (Stage) txtPassword.getScene().getWindow();
+            currentStage.close();
+            Stage stage = new Stage();
+            stage.setTitle("Login");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ignored) {
+        }
+    }
+
+    @Override
+    public void cargaInicial() {
+        userLogged.setText(appController.getUserLogged().getUsername());
+        comboBoxRol.getItems().addAll(FXCollections.observableList(appController.getRoles()));
+        refreshAndSortTable(tableViewUsers);
+        refreshAndSortTable(tableViewTasks);
     }
 }

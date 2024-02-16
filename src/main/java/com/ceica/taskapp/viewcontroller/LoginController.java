@@ -1,9 +1,10 @@
-package com.ceica.viewcontroller;
+package com.ceica.taskapp.viewcontroller;
 
-import com.ceica.controller.AppController;
-import com.ceica.modelos.User;
+import com.ceica.taskapp.TaskApp;
+import com.ceica.taskapp.controller.AppController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -24,21 +25,25 @@ public class LoginController {
 
     public void onLoginClick() {
         AppController appController = new AppController();
-        FXMLLoader fxmlLoader;
+
         if (appController.login(txtUsername.getText(), txtPassword.getText())) {
-            fxmlLoader = new FXMLLoader();
+            String view;
             Scene scene;
             String title;
             try {
                 if (appController.isAdmin(appController.getUserLogged())) {
-                    fxmlLoader.setLocation(getClass().getResource("/com/ceica/taskapp/admin-view.fxml"));
+                    view="admin-view.fxml";
                     title = "Admin menu";
                 } else {
-                    fxmlLoader.setLocation(getClass().getResource("/com/ceica/taskapp/user-view.fxml"));
+                    view="user-view.fxml";
                     title = "User menu";
                 }
+                FXMLLoader fxmlLoader = new FXMLLoader(TaskApp.class.getResource(view));
+                Parent root = fxmlLoader.load();
+                ViewController viewController = fxmlLoader.getController();
+                viewController.setAppController(appController);
 
-                scene = new Scene(fxmlLoader.load(), 600, 400);
+                scene = new Scene(root, 600, 400);
                 Stage currentStage = (Stage) lblMessage.getScene().getWindow();
                 currentStage.close();
                 Stage stage = new Stage();
@@ -46,7 +51,8 @@ public class LoginController {
                 stage.setScene(scene);
                 stage.show();
 
-            } catch (IOException ignored) {
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         } else {
             System.out.println("Incorrect user or password");

@@ -1,8 +1,8 @@
-package com.ceica.controller;
+package com.ceica.taskapp.controller;
 
-import com.ceica.modelos.Rol;
-import com.ceica.modelos.Task;
-import com.ceica.modelos.User;
+import com.ceica.taskapp.modelos.Rol;
+import com.ceica.taskapp.modelos.Task;
+import com.ceica.taskapp.modelos.User;
 
 import java.time.LocalDateTime;
 import java.util.List;

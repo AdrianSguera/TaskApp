@@ -4,6 +4,6 @@ module com.ceica.taskapp {
     requires java.sql;
 
 
-    opens com.ceica.viewcontroller to javafx.fxml;
+    opens com.ceica.taskapp.viewcontroller to javafx.fxml;
     exports com.ceica.taskapp;
 }
