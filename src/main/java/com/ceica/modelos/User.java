@@ -5,18 +5,20 @@ import java.util.List;
 import java.util.Optional;
 
 public class User extends ModeloBase{
-    private static int idUser = 1;
     private int id;
     private String username, password;
     private Rol rol;
 
-
     public User() {
-        //this.id = idUser++;
+    }
+
+    public User(String username) {
+        this.username = username;
+        this.password = "1234";
+        this.rol = new Rol();
     }
 
     public User(String username, String password, Rol rol) {
-        this.id = idUser++;
         this.username = username;
         this.password = password;
         this.rol = rol;

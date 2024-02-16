@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cb3db6c-f13c-4a87-aa52-4ca7b8d16108" name="Changes" comment="Inicio de proyecto">
-      <change afterPath="$PROJECT_DIR$/tareasapp.sql" afterDir="false" />
+    <list default="true" id="7cb3db6c-f13c-4a87-aa52-4ca7b8d16108" name="Changes" comment="08/02/2024">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/TaskApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/TaskApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/Rol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/viewcontroller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/viewcontroller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/viewcontroller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/viewcontroller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/viewcontroller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/viewcontroller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/admin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/admin-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/user-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/user-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +38,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2c635zV9brloGyfWxrddmifOBas" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -58,12 +63,21 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Alumno Tarde/Desktop/Programas/IdeaProjects/FirstJavaFX",
+    "last_opened_file_path": "C:/Users/Alumno Tarde/Desktop/Programas/IdeaProjects/TaskApp",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="TaskApp" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.ceica.taskapp.TaskApp" />
+      <module name="TaskApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -81,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707419644090</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="08/02/2024">
+      <option name="closed" value="true" />
+      <created>1707421434350</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707421434350</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -91,7 +113,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Inicio de proyecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inicio de proyecto" />
+    <MESSAGE value="08/02/2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="08/02/2024" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

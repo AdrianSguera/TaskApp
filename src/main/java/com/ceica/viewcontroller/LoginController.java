@@ -1,6 +1,7 @@
 package com.ceica.viewcontroller;
 
 import com.ceica.controller.AppController;
+import com.ceica.modelos.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -25,36 +26,30 @@ public class LoginController {
         AppController appController = new AppController();
         FXMLLoader fxmlLoader;
         if (appController.login(txtUsername.getText(), txtPassword.getText())) {
-            if (appController.isAdmin(appController.getUserLogged())) {
-                fxmlLoader = new FXMLLoader(getClass().getResource("admin-view.fxml"));
-                Scene scene;
-                try {
-                    scene = new Scene(fxmlLoader.load(), 600, 400);
-                    Stage currentStage = (Stage) lblMessage.getScene().getWindow();
-                    currentStage.close();
-                    Stage stage = new Stage();
-                    stage.setTitle("User menu");
-                    stage.setScene(scene);
-                    stage.show();
-
-                } catch (IOException ignored) {
+            fxmlLoader = new FXMLLoader();
+            Scene scene;
+            String title;
+            try {
+                if (appController.isAdmin(appController.getUserLogged())) {
+                    fxmlLoader.setLocation(getClass().getResource("/com/ceica/taskapp/admin-view.fxml"));
+                    title = "Admin menu";
+                } else {
+                    fxmlLoader.setLocation(getClass().getResource("/com/ceica/taskapp/user-view.fxml"));
+                    title = "User menu";
                 }
-            } else if (!appController.isAdmin(appController.getUserLogged())) {
-                fxmlLoader = new FXMLLoader(getClass().getResource("user-view.fxml"));
-                Scene scene;
-                try {
-                    scene = new Scene(fxmlLoader.load(), 600, 400);
-                    Stage currentStage = (Stage) lblMessage.getScene().getWindow();
-                    currentStage.close();
-                    Stage stage = new Stage();
-                    stage.setTitle("User menu");
-                    stage.setScene(scene);
-                    stage.show();
 
-                } catch (IOException ignored) {
-                }
-            }else
-                System.out.println("Incorrect user or password");
+                scene = new Scene(fxmlLoader.load(), 600, 400);
+                Stage currentStage = (Stage) lblMessage.getScene().getWindow();
+                currentStage.close();
+                Stage stage = new Stage();
+                stage.setTitle(title);
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (IOException ignored) {
+            }
+        } else {
+            System.out.println("Incorrect user or password");
         }
     }
 }

@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Task extends ModeloBase{
-    private static int idTask = 0;
     private int id;
     private String title, description;
     private boolean status;
@@ -18,7 +17,6 @@ public class Task extends ModeloBase{
     }
 
     public Task(String title, String description, LocalDateTime deadline, User user) {
-        this.id = idTask++;
         this.title = title;
         this.description = description;
         this.status = false;

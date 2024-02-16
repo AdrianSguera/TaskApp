@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Rol extends ModeloBase{
-    private static int idRol = 1;
     private int id;
     private String description;
 
@@ -13,7 +12,6 @@ public class Rol extends ModeloBase{
     }
 
     public Rol(String description) {
-        this.id = idRol++;
         this.description = description;
     }
 
@@ -61,6 +59,6 @@ public class Rol extends ModeloBase{
 
     @Override
     protected String getVista() {
-        return null;
+        return "roles";
     }
 }
