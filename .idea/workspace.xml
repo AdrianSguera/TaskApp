@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cb3db6c-f13c-4a87-aa52-4ca7b8d16108" name="Changes" comment="08/02/2024">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/viewcontroller/ViewController.java" afterDir="false" />
+    <list default="true" id="7cb3db6c-f13c-4a87-aa52-4ca7b8d16108" name="Changes" comment="16/02/2024">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/ModeloBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/modelos/ModeloBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/modelos/Rol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/modelos/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/modelos/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/modelos/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/viewcontroller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/viewcontroller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/viewcontroller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/viewcontroller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/viewcontroller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/viewcontroller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/admin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/admin-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/user-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ceica/taskapp/user-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/viewcontroller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/taskapp/viewcontroller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707421434350</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="16/02/2024">
+      <option name="closed" value="true" />
+      <created>1708112411857</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708112411857</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -130,7 +126,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Inicio de proyecto" />
     <MESSAGE value="08/02/2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="08/02/2024" />
+    <MESSAGE value="16/02/2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="16/02/2024" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

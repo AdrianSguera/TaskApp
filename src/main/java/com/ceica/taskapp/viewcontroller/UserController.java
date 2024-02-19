@@ -98,7 +98,7 @@ public class UserController extends ViewController {
     @Override
     public void cargaInicial() {
         userLogged.setText(appController.getUserLogged().getUsername());
-        taskList = FXCollections.observableList(appController.getTasks());
+        taskList = FXCollections.observableList(appController.getTasksByUser());
         taskList.sort(Comparator.comparing(Task::getId));
         tableView.setItems(taskList);
     }
